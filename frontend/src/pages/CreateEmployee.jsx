@@ -5,7 +5,7 @@ const CreateUser = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    password: '', // New password field
+    password: '', 
     mobile: '',
     designation: '',
     gender: '',
@@ -16,7 +16,7 @@ const CreateUser = () => {
 
   const [error, setError] = useState('');
 
-  // Handle form input change
+  
   const handleInputChange = (e) => {
     const { name, value, type, checked, files } = e.target;
 
@@ -32,7 +32,7 @@ const CreateUser = () => {
     }
   };
 
-  // Handle form submit
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -61,11 +61,10 @@ const CreateUser = () => {
       } else {
         console.log(result);
         alert('User created successfully!');
-        // Reset form after successful submission
         setFormData({
           name: '',
           email: '',
-          password: '', // Reset password field
+          password: '', 
           mobile: '',
           designation: '',
           gender: '',
@@ -85,7 +84,6 @@ const CreateUser = () => {
       <h2 className="text-2xl font-bold mb-5">Create Employee</h2>
 
       <form onSubmit={handleSubmit}>
-        {/* Name */}
         <div className="mb-4">
           <label className="block font-semibold text-gray-700">Name</label>
           <input
@@ -98,7 +96,6 @@ const CreateUser = () => {
           />
         </div>
 
-        {/* Email */}
         <div className="mb-4">
           <label className="block font-semibold text-gray-700">Email</label>
           <input
@@ -111,7 +108,6 @@ const CreateUser = () => {
           />
         </div>
 
-        {/* Password */}
         <div className="mb-4">
           <label className="block font-semibold text-gray-700">Password</label>
           <input
@@ -124,7 +120,6 @@ const CreateUser = () => {
           />
         </div>
 
-        {/* Mobile */}
         <div className="mb-4">
           <label className="block font-semibold text-gray-700">Mobile No</label>
           <input
@@ -137,7 +132,6 @@ const CreateUser = () => {
           />
         </div>
 
-        {/* Designation */}
         <div className="mb-4">
           <label className="block font-semibold text-gray-700">Designation</label>
           <select
@@ -154,7 +148,6 @@ const CreateUser = () => {
           </select>
         </div>
 
-        {/* Gender */}
         <div className="mb-4">
           <label className="block font-semibold text-gray-700">Gender</label>
           <div>
@@ -183,7 +176,6 @@ const CreateUser = () => {
           </div>
         </div>
 
-        {/* Course */}
         <div className="mb-4">
           <label className="block font-semibold text-gray-700">Course</label>
           <div>
@@ -202,7 +194,6 @@ const CreateUser = () => {
           </div>
         </div>
 
-        {/* Image Upload */}
         <div className="mb-4">
           <label className="block font-semibold text-gray-700">Image Upload</label>
           <input
@@ -215,7 +206,6 @@ const CreateUser = () => {
           />
         </div>
 
-        {/* Submit */}
         <div>
           <button
             type="submit"

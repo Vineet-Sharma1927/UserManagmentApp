@@ -4,17 +4,17 @@ const path = require('path');
 // Set up multer for image upload
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // Directory where images will be stored
+        cb(null, 'uploads/'); 
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname)); // Unique file name
+        cb(null, Date.now() + path.extname(file.originalname)); 
     }
 });
 
 const upload = multer({
     dest:'uploads/',
     storage: storage,
-    limits: { fileSize: 1000000 }, // 1MB file size limit
+    limits: { fileSize: 1000000 }, 
     fileFilter: (req, file, cb) => {
         const filetypes = /jpeg|jpg|png/;
         const extname = filetypes.test(path.extname(file.originalname).toLowerCase());

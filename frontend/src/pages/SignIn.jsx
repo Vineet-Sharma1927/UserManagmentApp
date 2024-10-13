@@ -10,7 +10,6 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation for empty fields
     if (!data.email || !data.password) {
       setError('Please fill in both fields.');
       return;
@@ -20,23 +19,20 @@ function LoginPage() {
       setLoading(true);
       setError('');
       
-      // API call to login endpoint
       let response = await fetch('http://localhost:3000/api/v1/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email: data.email,  // Sending email instead of username
+          email: data.email,  
           password: data.password
         })
       });
 
       let resData = await response.json();
-    //   console.log(resData.CheckFOrExistanceUser.name)
       
       if (response.ok) {
-        // Login successful
         alert('Login successful');
 
         localStorage.setItem("user", JSON.stringify(resData.CheckFOrExistanceUser));
@@ -44,7 +40,6 @@ function LoginPage() {
         navigate("/adminpage");
 
       } else {
-        // Handle error messages from API
         setError(resData.message || 'Login failed, please try again.');
       }
 

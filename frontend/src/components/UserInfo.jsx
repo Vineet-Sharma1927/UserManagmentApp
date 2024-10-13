@@ -13,7 +13,7 @@ const UserInfo = () => {
         fetchEmployees();
         const userData = JSON.parse(localStorage.getItem('user'));
         if (userData && userData.name) {
-            setUserName(userData.name); // Set the user name from localStorage
+            setUserName(userData.name); 
         }
     }, []);
 
@@ -88,7 +88,7 @@ const UserInfo = () => {
 
     return (
         <div className="p-4">
-            {/* Header and search functionality remain the same */}
+            {/* Header */}
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold">Employee List</h1>
                 <div className="flex items-center">
@@ -97,6 +97,7 @@ const UserInfo = () => {
                 </div>
             </div>
                 <hr/>
+                {/* Search Functinality */}
             <div className="flex mt-5 justify-between items-center mb-6">
                 <span className='font-semibold text-xl'>Total Count: {employees.length}</span>
                 <div className="flex items-center">
@@ -254,7 +255,7 @@ const UserInfo = () => {
                 </div>
             )}
 
-            {/* Delete Confirmation Modal */}
+            {/* Delete Modal */}
             {isDeleteModalOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                     <div className="bg-white p-4 rounded-lg">

@@ -4,16 +4,16 @@ function AdminPage() {
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    // Fetching user data from localStorage
+    
     const userData = JSON.parse(localStorage.getItem('user'));
     if (userData && userData.name) {
-      setUserName(userData.name); // Set the user name from localStorage
+      setUserName(userData.name); 
     }
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem('user'); // Remove user from localStorage
-    window.location.href = '/'; // Redirect to the login page after logout
+    localStorage.removeItem('user'); 
+    window.location.href = '/'; 
   };
   const handleEmployeeList=()=>{
     window.location.href = "/userinfo"
